@@ -4,6 +4,9 @@ namespace League\Cowsayphp;
 
 class Cow
 {
+    /**
+     * The infamous cow string
+     */
     const COW = <<<DOC
 
 {{bubble}}

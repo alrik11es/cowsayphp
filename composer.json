@@ -1,6 +1,6 @@
 {
-    "name": "league/cow",
-    "description": "Classic cowsay in PHP",
+    "name": "league/cowsayphp",
+    "description": "Cowsay port in PHP",
     "keywords": [
         "league",
         "cowsay"

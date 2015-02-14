@@ -2,10 +2,11 @@
 
 All Notable changes to `cowsayphp` will be documented in this file
 
-## NEXT - YYYY-MM-DD
+## NEXT - 2015-02-14
 
 ### Added
-- Nothing
+- Cowstring
+- Cow now working
 
 ### Deprecated
 - Nothing
