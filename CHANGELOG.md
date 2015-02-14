@@ -4,6 +4,10 @@ All Notable changes to `cowsayphp` will be documented in this file
 
 ## 1.0.1 - Not released yet
 
+### Added
+- Tux!
+- Dragon character.
+
 ### Fixed
 - Problem with terminal when program is on $PATH not loading composer correctly
 - Fixed misspelling in README.md

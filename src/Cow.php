@@ -18,6 +18,54 @@ class Cow
 
 DOC;
 
+    const TUX = <<<DOC
+
+{{bubble}}
+   \
+    \
+        .--.
+       |o_o |
+       |:_/ |
+      //   \ \
+     (|     | )
+    /'\_   _/`\
+    \___)=(___/
+
+DOC;
+
+    const DRAGON = <<<DOC
+
+{{bubble}}
+      \                    / \  //\
+       \    |\___/|      /   \//  \\\\
+            /0  0  \__  /    //  | \ \
+           /     /  \/_/    //   |  \  \
+           @_^_@'/   \/_   //    |   \   \
+           //_^_/     \/_ //     |    \    \
+        ( //) |        \///      |     \     \
+      ( / /) _|_ /   )  //       |      \     _\
+    ( // /) '/,_ _ _/  ( ; -.    |    _ _\.-~        .-~~~^-.
+  (( / / )) ,-{        _      `-.|.-~-.           .~         `.
+ (( // / ))  '/\      /                 ~-. _ .-~      .-~^-.  \
+ (( /// ))      `.   {            }                   /      \  \
+  (( / ))     .----~-.\        \-'                 .~         \  `. \^-.
+             ///.----..>        \             _ -~             `.  ^-`  ^-_
+               ///-._ _ _ _ _ _ _}^ - - - - ~                     ~-- ,.-~
+                                                                  /.-~
+
+DOC;
+
+    private $default_character = self::COW;
+
+    /**
+     * Use this method to set up a character
+     * @param $character
+     */
+    public function setCharacter($character)
+    {
+        $this->default_character = $character;
+    }
+
     /**
      * Make the cow speak from static context.
      * @param $text string A string you want the cow says
@@ -37,7 +85,7 @@ DOC;
     public function speak($text)
     {
         $message = $this->getSpeechBubble($text);
-        $cow = str_replace('{{bubble}}', $message, self::COW);
+        $cow = str_replace('{{bubble}}', $message, $this->default_character);
         return $cow;
     }
 
