@@ -6,6 +6,7 @@ All Notable changes to `cowsayphp` will be documented in this file
 
 ### Fixed
 - Problem with terminal when program is on $PATH not loading composer correctly
+- Fixed misspelling in README.md
 
 ## 1.0.0 - 2015-02-14
 
