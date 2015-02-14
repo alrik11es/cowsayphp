@@ -21,10 +21,20 @@ $ composer require league/cowsayphp
 ## Usage
 
 ``` php
-$skeleton = new League\Skeleton();
-echo $skeleton->echoPhrase('Hello, League!');
+use League\Cowsayphp\Cow;
+
+echo '<pre>'.Cow::say("Ohmg I'm a cow!").'</pre>';
 ```
 
+The result:
+    
+    < Ohmg I'm a cow! >
+            \   ^__^
+             \  (oo)\_______
+                (__)\       )\/\
+                    ||----w |
+                    ||     ||
+    
 ## Testing
 
 ``` bash
