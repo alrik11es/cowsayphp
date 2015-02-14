@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+define('PATH', realpath(dirname(__FILE__)));
+define('EXEC_PATH', getcwd());
+
+include(PATH.'/../vendor/autoload.php');
+
+if(count($argv) > 1){
+    $cow = new \League\Cowsayphp\Cow();
+    echo $cow->speak($argv[1]);
+}
