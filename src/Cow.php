@@ -5,7 +5,7 @@ namespace League\Cowsayphp;
 class Cow
 {
     /**
-     * The infamous cow string
+     * The fantastic cow string
      */
     const COW = <<<DOC
 
@@ -19,7 +19,7 @@ class Cow
 DOC;
 
     /**
-     * Make the cow speak.
+     * Make the cow speak from static context.
      * @param $text string A string you want the cow says
      * @return string The cow speaks...
      */
@@ -41,6 +41,11 @@ DOC;
         return $cow;
     }
 
+    /**
+     * Obtain the message as array wrapping the text
+     * @param $text
+     * @return array
+     */
     public function getMessageLines($text)
     {
         $message = $text;
@@ -51,6 +56,11 @@ DOC;
         return explode("\n", $message);
     }
 
+    /**
+     * Find the longest line and get the line length
+     * @param array $lines
+     * @return int
+     */
     public function getMaxLineLength(array $lines)
     {
         $lineLength = 0;
@@ -64,6 +74,11 @@ DOC;
         return $lineLength;
     }
 
+    /**
+     * Obtain the speech bubble.
+     * @param $text
+     * @return string
+     */
     public function getSpeechBubble($text)
     {
         $lines = $this->getMessageLines($text);

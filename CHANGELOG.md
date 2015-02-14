@@ -2,7 +2,12 @@
 
 All Notable changes to `cowsayphp` will be documented in this file
 
-## NEXT - 2015-02-14
+## 1.0.1 - Not released yet
+
+### Fixed
+- Problem with terminal when program is on $PATH not loading composer correctly
+
+## 1.0.0 - 2015-02-14
 
 ### Added
 - Cowstring

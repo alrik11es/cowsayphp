@@ -1,11 +1,79 @@
 #!/usr/bin/env php
 <?php
-define('PATH', realpath(dirname(__FILE__)));
-define('EXEC_PATH', getcwd());
-
-include(PATH.'/../vendor/autoload.php');
+if (extension_loaded('phar') && ($uri = Phar::running())) {
+    require "$uri/src/vendors/autoload.php";
+} elseif (class_exists('Extract')) {
+    require __DIR__ . '/../src/vendors/autoload.php';
+} else {
+    loadComposerClassloader(realpath($_SERVER['argv'][0]));
+}
 
 if(count($argv) > 1){
     $cow = new \League\Cowsayphp\Cow();
     echo $cow->speak($argv[1]);
+}
+
+/**
+ * Finds the Composer autoloader and returns it.
+ *
+ * @param null $dir  The starting directory.
+ * @param int  $skip The number of occurrences to skip.
+ *
+ * @return Composer\Autoload\ClassLoader The class loader.
+ *
+ * @throws RuntimeException If the loader could not be loaded.
+ */
+function loadComposerClassloader($dir = null, $skip = 0)
+{
+    $up = $dir;
+    $skips = 0;
+    do {
+        $dir = $up;
+        if (file_exists("$dir/composer.json")) {
+            if ($skip > $skips) {
+                $skips++;
+                continue;
+            }
+            $path = realpath("$dir/composer.json");
+        }
+    } while ($dir !== ($up = dirname($dir)));
+    if (empty($path)) {
+        throw new RuntimeException(
+            'The composer.json file could not be found.'
+        );
+    }
+    if (false === ($json = file_get_contents($path))) {
+        throw new RuntimeException(
+            sprintf(
+                'The file "%s" could not be read.',
+                $path
+            )
+        );
+    }
+    $json = json_decode($json);
+    if (JSON_ERROR_NONE !== ($code = json_last_error())) {
+        throw new RuntimeException(
+            sprintf(
+                'The file "%s" could not be parsed [%d].',
+                $path,
+                $code
+            )
+        );
+    }
+    $path = dirname($path);
+    if (isset($json->config) && isset($json->config->{'vendor-dir'})) {
+        $path .= DIRECTORY_SEPARATOR . $json->config->{'vendor-dir'};
+    } else {
+        $path .= DIRECTORY_SEPARATOR . 'vendor';
+    }
+    $path .= DIRECTORY_SEPARATOR . 'autoload.php';
+    if (false === file_exists($path)) {
+        throw new RuntimeException(
+            sprintf(
+                'The Composer class loader "%s" could not be found.',
+                $path
+            )
+        );
+    }
+    return include $path;
 }
