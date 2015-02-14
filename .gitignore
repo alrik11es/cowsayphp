@@ -1,0 +1,86 @@
+# https://github.com/github/gitignore
+
+# build - files generate with tools for static PHP code analyses
+build
+ 
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+##
+# composer 
+##
+composer.phar
+composer.lock
+
+##
+# components, libraries, etc
+##
+vendor
+
+##
+# Symfon2 - https://github.com/github/gitignore/blob/master/Symfony2.gitignore
+##
+
+# Bootstrap
+app/bootstrap*
+
+# Symfony directories
+vendor/*
+*/logs/*
+*/cache/*
+web/uploads/*
+web/bundles/*
+
+# Configuration files
+app/config/parameters.ini
+app/config/parameters.yml
+
+##
+# Netbeans
+##
+# insight say: "User specific files should not appear in .gitignore"
+# nbproject
+
+
+
+##
+# Eclipse - https://github.com/github/gitignore/blob/master/Global/Eclipse.gitignore
+##
+
+*.pydevproject
+#.project
+#.metadata
+bin/phpunit
+bin/security-checker
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
+# Idea
+.idea
+
+#c9
+.c9/*
