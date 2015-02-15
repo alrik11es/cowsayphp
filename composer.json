@@ -2,7 +2,6 @@
     "name": "alrik11es/cowsayphp",
     "description": "Cowsay port in PHP",
     "keywords": [
-        "league",
         "cowsay"
     ],
     "homepage": "https://github.com/alrik11es/cowsayphp",
