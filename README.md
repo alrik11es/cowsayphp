@@ -15,13 +15,13 @@ apps.
 Via Composer
 
 ``` bash
-$ composer require league/cowsayphp
+$ composer require alrik11es/cowsayphp
 ```
 
 ## Usage
 
 ``` php
-use League\Cowsayphp\Cow;
+use Cowsayphp\Cow;
 
 echo '<pre>'.Cow::say("Ohmg I'm a cow!").'</pre>';
 ```
