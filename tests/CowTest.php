@@ -1,7 +1,7 @@
 <?php
-namespace League\Cowsayphp\Test;
+namespace Cowsayphp\Test;
 
-use League\Cowsayphp\Cow;
+use Cowsayphp\Cow;
 
 class CowTest extends \PHPUnit_Framework_TestCase
 {

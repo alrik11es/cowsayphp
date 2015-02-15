@@ -9,7 +9,7 @@ if (extension_loaded('phar') && ($uri = Phar::running())) {
 }
 
 if(count($argv) > 1){
-    $cow = new \League\Cowsayphp\Cow();
+    $cow = new \Cowsayphp\Cow();
     echo $cow->speak($argv[1]);
 }
 

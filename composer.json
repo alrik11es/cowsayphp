@@ -1,5 +1,5 @@
 {
-    "name": "league/cowsayphp",
+    "name": "alrik11es/cowsayphp",
     "description": "Cowsay port in PHP",
     "keywords": [
         "league",
@@ -24,12 +24,12 @@
     },
     "autoload": {
         "psr-4": {
-            "League\\Cowsayphp\\": "src"
+            "Cowsayphp\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "League\\Cowsayphp\\Test\\": "tests"
+            "Cowsayphp\\Test\\": "tests"
         }
     },
     "extra": {

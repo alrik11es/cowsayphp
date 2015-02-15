@@ -9,8 +9,11 @@ All Notable changes to `cowsayphp` will be documented in this file
 - Dragon character.
 
 ### Fixed
-- Problem with terminal when program is on $PATH not loading composer correctly
+- Problem with terminal when program is on $PATH not loading composer correctly.
 - Fixed misspelling in README.md
+
+### Removed
+- Removing League namespace as requested.
 
 ## 1.0.0 - 2015-02-14
 
