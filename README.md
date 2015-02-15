@@ -5,7 +5,7 @@
 [![Build Status](https://img.shields.io/travis/alrik11es/cowsayphp/master.svg?style=flat-square)](https://travis-ci.org/alrik11es/cowsayphp)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/alrik11es/cowsayphp.svg?style=flat-square)](https://scrutinizer-ci.com/g/alrik11es/cowsayphp/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/alrik11es/cowsayphp.svg?style=flat-square)](https://scrutinizer-ci.com/g/alrik11es/cowsayphp)
-[![Total Downloads](https://img.shields.io/packagist/dt/league/cowsayphp.svg?style=flat-square)](https://packagist.org/packages/league/cowsayphp)
+[![Total Downloads](https://img.shields.io/packagist/dt/alrik11es/cowsayphp.svg?style=flat-square)](https://packagist.org/packages/alrik11es/cowsayphp)
 
 Do you remember classic linux Cowsay? Well this is a port for PHP if you want lovely cows everywhere in your terminal
 apps.
