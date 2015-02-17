@@ -1,6 +1,6 @@
 # The MIT License (MIT)
 
-Copyright (c) 2015 Marcos Sigueros Fernández <alrik11es@gmail.com>
+Copyright (c) 2015 Marcos Sigueros
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal
