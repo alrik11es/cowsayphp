@@ -84,3 +84,9 @@ local.properties
 
 #c9
 .c9/*
+
+build
+
+bin/*
+!bin/cowsayphp
+!bin/cowsayphp.bat
