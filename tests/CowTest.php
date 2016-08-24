@@ -1,7 +1,9 @@
 <?php
 namespace Cowsayphp\Test;
 
+use Cowsayphp\AbstractAnimal;
 use Cowsayphp\Cow;
+use Cowsayphp\Farm;
 
 class CowTest extends \PHPUnit_Framework_TestCase
 {
@@ -35,7 +37,8 @@ class CowTest extends \PHPUnit_Framework_TestCase
      */
     public function testSpeechBubble($text, $bubble)
     {
-        $cow = new Cow();
+        /** @var AbstractAnimal $cow */
+        $cow = Farm::create(\Cowsayphp\Farm\Cow::class);
         $message = $cow->getSpeechBubble($text);
         $this->assertEquals($message, $bubble);
     }

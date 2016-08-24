@@ -9,8 +9,8 @@ if (extension_loaded('phar') && ($uri = Phar::running())) {
 }
 
 if(count($argv) > 1){
-    $cow = new \Cowsayphp\Cow();
-    echo $cow->speak($argv[1]);
+    $cow = \Cowsayphp\Farm::create(\Cowsayphp\Farm\Cow::class);
+    echo $cow->say($argv[1]);
 }
 
 /**
