@@ -1,5 +1,9 @@
 #!/usr/bin/env php
 <?php
+/**
+ * This terminal program has been done for testing purposes, but if someone needs it could be improved via pull-requests
+ */
+
 if (extension_loaded('phar') && ($uri = Phar::running())) {
     require "$uri/src/vendors/autoload.php";
 } elseif (class_exists('Extract')) {
@@ -9,6 +13,7 @@ if (extension_loaded('phar') && ($uri = Phar::running())) {
 }
 
 if(count($argv) > 1){
+    // Todo: Create a way to select the animal from the terminal
     $cow = \Cowsayphp\Farm::create(\Cowsayphp\Farm\Cow::class);
     echo $cow->say($argv[1]);
 }

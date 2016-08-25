@@ -10,6 +10,8 @@
 Do you remember classic linux Cowsay? Well this is a port for PHP if you want lovely cows everywhere in your terminal
 apps.
 
+Now supporting more animals in the farm.
+
 ## Install
 
 Via Composer
@@ -17,13 +19,15 @@ Via Composer
 ``` bash
 $ composer require alrik11es/cowsayphp
 ```
+Requires PHP >=5.6
 
-## Usage
+## Using
 
 ``` php
-use Cowsayphp\Cow;
+use Cowsayphp\Farm;
 
-echo '<pre>'.Cow::say("Ohmg I'm a cow!").'</pre>';
+$cow = Farm::create(\Cowsayphp\Farm\Cow::class);
+echo '<pre>'.$cow->say("Ohmg I'm a cow!").'</pre>';
 ```
 
 The result:
@@ -35,10 +39,68 @@ The result:
                     ||----w |
                     ||     ||
     
+### Other animals
+
+_\Cowsayphp\Farm\Whale::class_
+
+    < hello I'm a whale! >
+        \
+         \            ##         .
+                ## ## ##        ==
+             ## ## ## ## ##    ===
+         /"""""""""""""""""\___/ ===
+    ~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~
+         \______ o           __/
+          \    \         __/
+           \____\_______/
+
+_\Cowsayphp\Farm\Dragon::class_
+
+    < Dragon! >
+          \                    / \  //\
+           \    |\___/|      /   \//  \\
+                /0  0  \__  /    //  | \ \
+               /     /  \/_/    //   |  \  \
+               @_^_@'/   \/_   //    |   \   \
+               //_^_/     \/_ //     |    \    \
+            ( //) |        \///      |     \     \
+          ( / /) _|_ /   )  //       |      \     _\
+        ( // /) '/,_ _ _/  ( ; -.    |    _ _\.-~        .-~~~^-.
+      (( / / )) ,-{        _      `-.|.-~-.           .~         `.
+     (( // / ))  '/\      /                 ~-. _ .-~      .-~^-.  \
+     (( /// ))      `.   {            }                   /      \  \
+      (( / ))     .----~-.\        \-'                 .~         \  `. \^-.
+                 ///.----..>        \             _ -~             `.  ^-`  ^-_
+                   ///-._ _ _ _ _ _ _}^ - - - - ~                     ~-- ,.-~
+                 
+_\Cowsayphp\Farm\Tux::class_
+    
+    < Tux present! >
+       \
+        \
+            .--.
+           |o_o |
+           |:_/ |
+          //   \ \
+         (|     | )
+        /'\_   _/`\
+        \___)=(___/
+                                                        
+    
+## Deprecated use
+
+This will be deprecated in future versions. But still works.
+
+``` php
+use Cowsayphp\Cow;
+
+echo '<pre>'.Cow::say("Ohmg I'm a cow!").'</pre>';
+```
+
 ## Testing
 
 ``` bash
-$ phpunit
+$ ./bin/phpunit
 ```
 
 ## Contributing
