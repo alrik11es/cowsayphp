@@ -10,7 +10,7 @@ class Cow extends AbstractAnimal
      */
     protected $character = <<<DOC
 
-{{bubble}}                  
+{{bubble}}
         \   ^__^            
          \  (oo)\_______    
             (__)\       )\/\

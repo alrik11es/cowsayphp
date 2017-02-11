@@ -8,7 +8,7 @@ class Whale extends AbstractAnimal
 {
     protected $character = <<<DOC
 
-{{bubble}}                                  
+{{bubble}}
     \                                       
      \            ##         .              
             ## ## ##        ==              

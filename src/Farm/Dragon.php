@@ -8,7 +8,7 @@ class Dragon extends AbstractAnimal
 
     protected $character = <<<DOC
 
-{{bubble}}                                                                 
+{{bubble}}
       \                    / \  //\                                        
        \    |\___/|      /   \//  \\\\                                     
             /0  0  \__  /    //  | \ \                                     

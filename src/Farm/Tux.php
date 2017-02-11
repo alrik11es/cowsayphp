@@ -7,7 +7,7 @@ class Tux extends AbstractAnimal
 {
     protected $character = <<<DOC
 
-{{bubble}}        
+{{bubble}}
    \              
     \             
         .--.      
