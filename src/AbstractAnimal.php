@@ -15,12 +15,27 @@ abstract class AbstractAnimal implements AnimalInterface
         $message = $this->getSpeechBubble($text);
         $bubbleLength = $this->getMaxLineLength($message);
         $characterLength = $this->getMaxLineLength($this->character);
-        $animal = str_replace(
+        $extendLength = $characterLength-$bubbleLength;
+        $extendBubble = function ($text) use ($extendLength) {
+            return implode(
+                "\n",
+                array_map(
+                    function ($line) use ($extendLength) {
+                        return str_pad($line, $extendLength, ' ');
+                    },
+                    explode(
+                        "\n",
+                        $text
+                    )
+                )
+            );
+        };
+        
+        return str_replace(
           '{{bubble}}',
-          str_pad($message, $characterLength-$bubbleLength, ' '),
+          $extendBubble($message),
           $this->character
         );
-        return $animal;
     }
 
     /**
