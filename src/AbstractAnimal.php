@@ -17,7 +17,7 @@ abstract class AbstractAnimal implements AnimalInterface
         $characterLength = $this->getMaxLineLength($this->character);
         $animal = str_replace(
           '{{bubble}}',
-          str_pad($message, $characterLength-$bubbleLength, '&nbsp;'),
+          str_pad($message, $characterLength-$bubbleLength, ' '),
           $this->character
         );
         return $animal;
