@@ -43,8 +43,11 @@ abstract class AbstractAnimal implements AnimalInterface
      * @param array $lines
      * @return int
      */
-    public function getMaxLineLength(array $lines)
+    public function getMaxLineLength($lines)
     {
+        if (!is_array($lines)) {
+            $lines = explode("\n", $lines);
+        }
         $lineLength = 0;
         // find the longest line
         foreach ($lines as $line) {
