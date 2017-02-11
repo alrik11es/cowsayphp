@@ -7,16 +7,16 @@ class Tux extends AbstractAnimal
 {
     protected $character = <<<DOC
 
-{{bubble}}
-   \
-    \
-        .--.
-       |o_o |
-       |:_/ |
-      //   \ \
-     (|     | )
-    /'\_   _/`\
-    \___)=(___/
+{{bubble}}        
+   \              
+    \             
+        .--.      
+       |o_o |     
+       |:_/ |     
+      //   \ \    
+     (|     | )   
+    /'\_   _/`\   
+    \___)=(___/   
 
 DOC;
 }
