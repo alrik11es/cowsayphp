@@ -13,7 +13,13 @@ abstract class AbstractAnimal implements AnimalInterface
     public function say($text)
     {
         $message = $this->getSpeechBubble($text);
-        $animal = str_replace('{{bubble}}', $message, $this->character);
+        $bubbleLength = $this->getMaxLineLength($message);
+        $characterLength = $this->getMaxLineLength($this->character);
+        $animal = str_replace(
+          '{{bubble}}',
+          str_pad($message, $characterLength-$bubbleLength),
+          $this->character
+        );
         return $animal;
     }
 
