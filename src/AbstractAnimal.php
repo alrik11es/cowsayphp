@@ -13,8 +13,29 @@ abstract class AbstractAnimal implements AnimalInterface
     public function say($text)
     {
         $message = $this->getSpeechBubble($text);
-        $animal = str_replace('{{bubble}}', $message, $this->character);
-        return $animal;
+        $bubbleLength = $this->getMaxLineLength($message);
+        $characterLength = $this->getMaxLineLength($this->character);
+        $extendLength = $characterLength-$bubbleLength;
+        $extendBubble = function ($text) use ($extendLength) {
+            return implode(
+                "\n",
+                array_map(
+                    function ($line) use ($extendLength) {
+                        return str_pad($line, $extendLength, ' ');
+                    },
+                    explode(
+                        "\n",
+                        $text
+                    )
+                )
+            );
+        };
+        
+        return str_replace(
+          '{{bubble}}',
+          $extendBubble($message),
+          $this->character
+        );
     }
 
     /**
@@ -37,8 +58,11 @@ abstract class AbstractAnimal implements AnimalInterface
      * @param array $lines
      * @return int
      */
-    public function getMaxLineLength(array $lines)
+    public function getMaxLineLength($lines)
     {
+        if (!is_array($lines)) {
+            $lines = explode("\n", $lines);
+        }
         $lineLength = 0;
         // find the longest line
         foreach ($lines as $line) {
