@@ -13,29 +13,28 @@ abstract class AbstractAnimal implements AnimalInterface
     public function say($text)
     {
         $message = $this->getSpeechBubble($text);
-        $bubbleLength = $this->getMaxLineLength($message);
-        $characterLength = $this->getMaxLineLength($this->character);
-        $extendLength = $characterLength-$bubbleLength;
-        $extendBubble = function ($text) use ($extendLength) {
-            return implode(
-                "\n",
-                array_map(
-                    function ($line) use ($extendLength) {
-                        return str_pad($line, $extendLength, ' ');
-                    },
-                    explode(
-                        "\n",
-                        $text
-                    )
-                )
-            );
-        };
         
         return str_replace(
           '{{bubble}}',
-          $extendBubble($message),
+          $message,
           $this->character
         );
+    }
+
+    /**
+     * Used to pad the bubble to fit at least the size of the animal with empty spaces.
+     * @param $message
+     * @return string
+     */
+    public function extendBubble($message)
+    {
+        $characterLength = $this->getMaxLineLength($this->character);
+        $exploded_message = explode("\n", $message);
+        $padded_message = array_map( function ($line) use ($characterLength) {
+            return str_pad($line, $characterLength, ' ');
+        },$exploded_message);
+
+        return implode("\n",$padded_message);
     }
 
     /**
@@ -97,6 +96,8 @@ abstract class AbstractAnimal implements AnimalInterface
             }
             $text .= "\\ {$lastLine} /";
         }
+
+        $text = $this->extendBubble($text);
         return $text;
     }
 }

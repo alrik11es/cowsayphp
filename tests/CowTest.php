@@ -12,11 +12,11 @@ class CowTest extends \PHPUnit_Framework_TestCase
         return array(
             array(
                 "this is a text\nwith lines",
-                "/ this is a text \\\n\ with lines     /"
+                "/ this is a text \\          \n\ with lines     /          "
             ),
             array(
                 "this is a text",
-                "< this is a text >"
+                "< this is a text >          "
             ),
             array(
                 "this is a looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong line",
@@ -26,7 +26,7 @@ class CowTest extends \PHPUnit_Framework_TestCase
             ),
             array(
                 "short",
-                "< short >"
+                "< short >                   "
             )
         );
     }
@@ -52,11 +52,11 @@ class CowTest extends \PHPUnit_Framework_TestCase
         $testcow = <<<COW
 
 {{bubble}}
-        \   ^__^
-         \  (oo)\_______
+        \   ^__^            
+         \  (oo)\_______    
             (__)\       )\/\
-                ||----w |
-                ||     ||
+                ||----w |   
+                ||     ||   
 
 COW;
         $testcow = str_replace('{{bubble}}', $bubble, $testcow);
