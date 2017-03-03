@@ -5,7 +5,7 @@ All Notable changes to `cowsayphp` will be documented in this file
 ## 1.2.1 - Dev version
 
 - Added changes from PR #6 to pad bubble to size of the character.
-- Removed scrutinizer.
+- Removed scrutinizer coverage from travis.
 
 ## 1.2.0
 
